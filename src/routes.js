@@ -10,8 +10,9 @@ const router = express.Router()
 
 router.get('/users', (req, res) => {
     try{
-        const users = usersData.slice(0, req.query.length)
-        console.log(users.length)
+        const length = req.query.length ? (req.query.length > 100 ? 100 : req.query.length) : 25
+        const users = usersData.slice(0, length)
+        // console.log(users.length)
         res.status(200).json(users)
     }catch(e){
         res.status(400).send({message: 'Invalid request.'})
@@ -22,7 +23,7 @@ router.get('/users/random', (req, res) => {
     try{
         const length = req.query.length ? (req.query.length > 100 ? 100 : req.query.length) : 25
         const users = createUsers(first_names, last_names, length)
-        console.log(users.length)
+        // console.log(users.length)
         res.status(200).json(users)
     }catch(e){
         res.status(400).send({message: 'Invalid request.'})
@@ -31,8 +32,9 @@ router.get('/users/random', (req, res) => {
 
 router.get('/addresses', (req, res) => {
     try{
-        const addresses = addressesData.slice(0, req.query.length)
-        console.log(addresses.length)
+        const length = req.query.length ? (req.query.length > 100 ? 100 : req.query.length) : 25
+        const addresses = addressesData.slice(0, length)
+        // console.log(addresses.length)
         res.status(200).json(addresses)
     }catch(e){
         res.status(400).send({message: 'Invalid request.'})
@@ -44,7 +46,7 @@ router.get('/addresses/random', (req, res) => {
     try{
         const length = req.query.length ? (req.query.length > 100 ? 100 : req.query.length) : 25
         const addresses = createAddresses(length)
-        console.log(addresses.length)
+        // console.log(addresses.length)
         res.status(200).json(addresses)
     }catch(e){
         res.status(400).send({message: 'Invalid request.'})
