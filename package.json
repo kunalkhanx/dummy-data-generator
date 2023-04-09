@@ -1,0 +1,29 @@
+{
+  "name": "dummy-data-api",
+  "version": "1.0.0",
+  "description": "Generate and fetch dummy data",
+  "main": "./src/app.js",
+  "scripts": {
+    "dev": "nodemon ./src/app.js",
+    "start": "node ./src/app.js"
+  },
+  "keywords": [
+    "data",
+    "dunny",
+    "data",
+    "user",
+    "data",
+    "product",
+    "data",
+    "data",
+    "generator"
+  ],
+  "author": "Kunal Khan",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
